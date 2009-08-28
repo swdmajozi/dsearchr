@@ -1,5 +1,5 @@
 #summary How to install dSearchr.
-#labels Featured,Phase-Deploy,Label-1
+#labels Featured,Phase-Deploy,Page-1
 
 = Installation: =
 ==With form validation==
