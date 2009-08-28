@@ -31,13 +31,13 @@ with (thisform)
 }
 </script>
 }}}
-immediately before the '</head>' tag.
+immediately before the {{{</head>}}} tag.
   # *Copy & Paste:*
 {{{
 <form id="FormName" action="search.php" method="post" name="FormName" onsubmit="return validate_form(this)">
 			<strong><span class="ds7">Search:</span></strong>  <input class="dsR2" type="search" name="search" results="5" size="25" accesskey="S"><br></form>
 }}}
-in between the <body> and </body> tags.
+in between the {{{<body>}}} and {{{</body>}}} tags.
 
 ==Without form validation==
   # *Copy & Paste:*
@@ -45,4 +45,4 @@ in between the <body> and </body> tags.
 <form id="FormName" action="search.php" method="post" name="FormName" >
 			<strong><span class="ds7">Search:</span></strong>  <input class="dsR2" type="search" name="search" results="5" size="25" accesskey="S"><br></form>
 }}}
-in between the <body> and </body> tags.
+in between the {{{<body>}}} and {{{</body>}}} tags.
