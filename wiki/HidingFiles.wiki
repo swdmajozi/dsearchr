@@ -1,5 +1,5 @@
 #summary How to hide files.
-#labels Featured,Phase-Deploy
+#labels Featured,Phase-Deploy,Page-2
 
 = Hiding Files. =
 
