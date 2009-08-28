@@ -1,0 +1,41 @@
+#summary Source code of search.php.
+#labels Phase-Design,Featured,Page-3
+
+= Source Code: =
+ {{{
+<?php
+   //////////////////////
+  // © Nadav Ami 2009 //
+ //////////////////////
+echo
+'<html>
+<head>
+<title>Search Results</title>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<meta name="generator" content="Adobe GoLive" />
+		<title>Music</title>
+		</head>';
+echo'<body>
+  <div style="width: 267; height: 360; overflow-y: auto;">';
+
+$dirname = "./";//Must have a trailing slash.
+$dir = opendir($dirname);
+while(false != ($file = readdir($dir)))
+{
+if(($file != ".") and ($file != "..") and ($file != ".DS_Store") and ($file != "search.php"))
+{
+$des =  $file;
+$mystring = $des;
+$findme = $_POST["search"];
+$pos = stripos($mystring, $findme);
+
+if ($pos === false) {
+  //Leave this blank
+} else {
+   echo'<a href="' . $dirname . $mystring . '">' . $mystring . '</a><br>';
+}
+}
+}
+echo '</div></body></html>';
+?>
+}}}
