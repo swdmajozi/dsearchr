@@ -1,5 +1,5 @@
 #labels Featured,Phase-Design,Page-3
-<?php
+{{{<?php
    //////////////////////
   // © Nadav Ami 2009 //
  //		Version 1.2  //
@@ -28,3 +28,4 @@ echo "Nothing was found.";//Tell the user nothing was found.
 echo '<img src="yourimagehere.jpg"/>';//Display an image, when nothing was found.
 }
 ?>
+}}}
