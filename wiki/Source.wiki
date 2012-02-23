@@ -1,46 +1,30 @@
-#summary Source code of search.php.
 #labels Featured,Phase-Design,Page-3
-
-= Source Code: =
- {{{
 <?php
    //////////////////////
   // © Nadav Ami 2009 //
- //////////////////////
-echo
-'<html>
-<head>
-<title>Search Results</title>
-<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-                <meta name="generator" content="Adobe GoLive" />
-                <title>Music</title>
-                </head>';
-echo'<body>
-  <div style="width: 267; height: 360; overflow-y: auto;">';
+ //		Version 1.2  //
+//////////////////////
 
-$dirname = "./";//Must have a trailing slash.
-$dir = opendir($dirname);
-while(false != ($file = readdir($dir)))
-{
-if(($file != ".") and ($file != "..") and ($file != ".DS_Store") and ($file != "search.php"))
-{
-$des =  $file;
-$mystring = $des;
+
+$dirname = "./";//Directory to search in. *Must have a trailing slash*
 $findme = $_POST["search"];
-$pos = stripos($mystring, $findme);
 
-if ($pos === false) {
-	  //If nothing is found, say something or display an image.
-echo "Nothing was found.";
-echo '<img src="yourimagehere.jpg"/>';
+$dir = opendir($dirname);
 
-break;
-
-} else {
-   echo'<a href="' . $dirname . $mystring . '">' . $mystring . '</a><br>';
+while(false != ($file = readdir($dir))){//Loop for every item in the directory.
+if(($file != ".") and ($file != "..") and ($file != ".DS_Store") and ($file != "search.php"))//Exclude these files from the search
+{
+$pos = stripos($file, $findme);
+if ($pos !== false){
+$thereisafile = true;//Tell the script something was found.
+   echo'<a href="' . $dirname . $file . '">' . $file . '</a><br>';//Display the search results as links.
+}else{
+	//Leave this blank
 }
 }
 }
-echo '</div></body></html>';
+if (!isset($thereisafile)){
+echo "Nothing was found.";//Tell the user nothing was found.
+echo '<img src="yourimagehere.jpg"/>';//Display an image, when nothing was found.
+}
 ?>
-}}}
