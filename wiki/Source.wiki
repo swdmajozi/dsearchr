@@ -1,9 +1,10 @@
 #labels Featured,Phase-Design,Page-3
-{{{<?php
-   //////////////////////
+{{{
+<?php
+   ///////////////////////
   // © Nadav Ami 2009 //
- //		Version 1.2  //
-//////////////////////
+ //	      Version 1.2    //
+///////////////////////
 
 
 $dirname = "./";//Directory to search in. *Must have a trailing slash*
