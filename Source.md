@@ -1,0 +1,32 @@
+
+```
+<?php
+   ///////////////////////
+  // © Nadav Ami 2009 //
+ // 	Version 1.2  //
+///////////////////////
+
+
+$dirname = "./";//Directory to search in. *Must have a trailing slash*
+$findme = $_POST["search"];
+
+$dir = opendir($dirname);
+
+while(false != ($file = readdir($dir))){//Loop for every item in the directory.
+if(($file != ".") and ($file != "..") and ($file != ".DS_Store") and ($file != "search.php"))//Exclude these files from the search
+{
+$pos = stripos($file, $findme);
+if ($pos !== false){
+$thereisafile = true;//Tell the script something was found.
+   echo'<a href="' . $dirname . $file . '">' . $file . '</a><br>';//Display the search results as links.
+}else{
+	//Leave this blank
+}
+}
+}
+if (!isset($thereisafile)){
+echo "Nothing was found.";//Tell the user nothing was found.
+echo '<img src="yourimagehere.jpg"/>';//Display an image, when nothing was found.
+}
+?>
+```
